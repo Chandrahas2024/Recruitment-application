@@ -1,0 +1,85 @@
+ <mvc:View controllerName="com.org.RecruitmentApp.controller.jobposting"
+displayBlock="true" 
+xmlns:tnt="sap.tnt" 
+xmlns:fiori="sap.ui.webc.fiori" 
+xmlns:form="sap.ui.layout.form"
+xmlns:u="sap.ui.unified" 
+xmlns:core="sap.ui.core"
+xmlns:l="sap.ui.layout"
+xmlns="sap.m" 
+xmlns:mvc="sap.ui.core.mvc">
+
+        <Page title="JOB POSTING" id="add">
+
+                 <content>
+
+                 <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                <Label text="Company Name" labelFor="info" />
+                
+                <Input  growing="true" growingMaxLines="2" width="350px" value="{userDetails>/jobposting/companyname}"/>
+
+                <Label text="Job title " labelFor="Jobtitle" />
+
+                 <Input id="Jobtitle" placeholder="Job title" width="350px" value="{userDetails>/jobposting/jobtitle}">
+
+                </Input>
+
+                 <Label text="Job description" labelFor="Jobdescription" />
+
+                 <TextArea placeholder="Enter Text" growing="true" growingMaxLines="2" width="350px" value="{userDetails>/jobposting/jobdescription}"/>
+
+                <Label text="Location" labelFor="Location" />
+
+                <ComboBox width="350px" placeholder="select" value="{userDetails>/jobposting/location}">
+
+                         <core:Item key="SAP UI5" text="India"></core:Item>
+
+                         <core:Item key="SAP UI5" text="America"></core:Item>
+
+                         <core:Item key="SAP UI5" text="Australia"></core:Item>
+
+                 </ComboBox>
+        
+        
+        
+                 <Label text="Job type" labelFor="Jobtype" />
+
+        <ComboBox width="350px" placeholder="select" value="{userDetails>/jobposting/jobtype}">
+
+
+                         <core:Item key="SAP UI5" text="Full Time"></core:Item>
+
+                         <core:Item key="SAP UI5" text="Half Time"></core:Item>
+
+                <core:Item key="SAP UI5" text="Flexible Time"></core:Item>
+
+         </ComboBox>
+
+                  <Label text="Required qualifications and skills" labelFor="skills" />
+
+                <TextArea placeholder="Enter Text" growing="true" growingMaxLines="2" width="350px" value="{userDetails>/jobposting/RequriedQualificationAndSkills}"/>
+
+                 <Label text="Application deadline" labelFor="deadline" />
+
+                 <DatePicker id="DP1" placeholder="Enter Date" change="handleChange" class="sapUiSmallMarginBottom" width="350px" value="{userDetails>/jobposting/enterdate}"/>
+
+                 <Label text="Company information" labelFor="info" />
+                
+                <TextArea placeholder="Enter Text" growing="true" growingMaxLines="2" width="350px" value="{userDetails>/jobposting/companyinfo}"/>
+
+                <Label text="Status" labelFor="info" />
+                
+                <Input  growing="true" growingMaxLines="2" width="350px" value="{userDetails>/jobposting/status}"/>
+                
+             <FlexBox>
+             <Button text="Post"  type="Emphasized" press="onPressPost"></Button>
+             </FlexBox>
+
+
+         </l:VerticalLayout>  
+
+        </content>
+
+         </Page>
+
+</mvc:View>
